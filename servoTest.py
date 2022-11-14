@@ -9,8 +9,8 @@ from time import sleep
 
 print("hello world, let's try to move a servo")
 
-servo_1 = Servo(8)     # Servo 1 connected to GPIO port #8
-servo_2 = Servo(10)    # Servo 2 connected to GPIO port #10
+servo_1 = Servo(14)     # Servo 1 connected to GPIO port #8
+servo_2 = Servo(15)    # Servo 2 connected to GPIO port #10
 
 try:
     while True:

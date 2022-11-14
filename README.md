@@ -2,11 +2,14 @@
 
 This project draws light art on glow-in-the-dark targets using a laser pointer and a Raspberry Pi. This repo is a fork of `tuckershannon/LaserPi`, and he deserves the props for the cool factor. 
 
+<br>
+
 ## Requirements
 To run this project, you'll need ... 
 - a Raspberry Pi computer (I used a [RPi 3B+](https://www.raspberrypi.com/products/raspberry-pi-3-model-b/))
 - Adafruit [pre-built servo gimbals](https://adafru.it/1967)
 
+<br>
 
 ## Setup (Mac)
 
@@ -17,7 +20,7 @@ To run this project, you'll need ...
     - `username` / `password` to something non-default, [to avoid hackers](https://www.raspberrypi.com/news/raspberry-pi-bullseye-update-april-2022/)
     - ✅ `Configure wireless LAN` with valid WiFi creds
 
-![handy imager options](./docs/rpi-imager-options.png)
+<img alt="handy imager options" src="./docs/rpi-imager-options.png" width="400">
 
 2. **Connect Pi to Wi-Fi.** Put the SD card you just made into the Raspberry Pi, and boot it. After 1-2 mins, it should connect to Wi-Fi using the creds you entered in step (1). You can use a computer on your local network to `ping` the Pi and verify it's awake ... 
 
