@@ -45,3 +45,41 @@ ssh pi@raspberrypi.local
 cd PATH/TO/LASERPI/REPO # <= replace w the path to LaserPi repo
 ssh pi@raspberrypi.local 'bash -s' < rPiFirstBootSetup.sh
 ```
+
+When setup is complete, you'll see ... 
+
+```
+ finished Pi setup, rebooting ...
+```
+
+<br>
+
+
+## Run
+Congrats! Now you have a fresh Raspberry Pi with a `master` copy of `LaserPi` ... 
+
+```sh
+pi@raspberrypi:~ $ ls -l
+drwxr-xr-x 2 pi pi 4096 Sep 21 22:00 Bookshelf
+drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Desktop
+drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Documents
+drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Downloads
+*************************************************
+drwxr-xr-x 4 pi pi 4096 Nov 14 13:11 LaserPi
+*************************************************
+drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Music
+drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Pictures
+drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Public
+drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Templates
+drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Videos
+```
+
+So you can run any of the python scripts in `LaserPi/`, like `servoTest.py`. From a computer on your local network, run ... 
+
+```sh
+ssh pi@raspberrypi.local
+cd LaserPi/
+python servoTest.py
+```
+
+If you've wired your circuit correctly, your Adafruit servos should start to wiggle every 0.5s.
