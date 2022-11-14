@@ -3,6 +3,8 @@
 # Set up a newly imaged Raspberry Pi for @robryan/LaserPi ...
 # author: @robryan
 
+echo -e "starting Raspberry Pi setup ..."
+
 # update device Unix libs
 sudo apt-get update 
 sudo apt-get -y upgrade 
@@ -18,6 +20,8 @@ git clone https://github.com/robryan/LaserPi.git
 sudo apt-get -y install python-pip 
 sudo pip install adafruit-io
 sudo pip install weather-api 
+
+echo -e "\n finished Pi setup, rebooting ...\n"
 
 # restart to make sure it's all available
 sudo reboot
