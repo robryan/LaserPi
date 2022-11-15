@@ -54,5 +54,5 @@ def min_med_max(interval_seconds, num_iterations):
     exit
 
 
-min_med_max(0.75, 10)   # 10 cycles, each every 0.75s
+min_med_max(0.75, 4)   # 4 cycles, each every 0.75s
 
