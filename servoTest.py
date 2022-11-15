@@ -77,13 +77,14 @@ def draw_box(interval_seconds, num_iterations):
             for x in np.arange(x_left, x_right, x_step):
                 print("x is now ... ", x)
                 vertical_yaw.value = x
-                sleep(x_sleep)
+                # sleep(x_sleep)
 
             # pan right to left
-            for x in np.arange(x_right, x_left, 0.001):
+            for x in np.arange(x_right, x_left, x_step):
                 print("x is now ... ", x)
                 vertical_yaw.value = x
-                sleep(x_sleep)
+                # sleep(x_sleep)
+            
             sleep(interval_seconds)
 
     except KeyboardInterrupt:
