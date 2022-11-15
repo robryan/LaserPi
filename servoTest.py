@@ -65,10 +65,10 @@ def draw_box(interval_seconds, num_iterations):
         for iteration in range(0, num_iterations):
             # rotate left/right in tiny steps
             for x in np.arange(-1, 1, 0.01):
-                vertical_yaw.value(x)
+                vertical_yaw.value = x
 
             for y in np.arange(-1, 1, 0.01):
-                lateral_pitch.value(y)
+                lateral_pitch.value = y
             
             sleep(interval_seconds)
 
