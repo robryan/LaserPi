@@ -56,30 +56,22 @@ When setup is complete, you'll see ...
 
 
 ## Run
-Congrats! Now you have a fresh Raspberry Pi with a `master` copy of `LaserPi` ... 
+Congrats! Now you have a fresh Raspberry Pi with a `master` copy of `LaserPi`. So you can run any of the python scripts in `LaserPi/`, like `servoTest.py`. If you've wired your circuit correctly, your Adafruit servos should start to wiggle.
+
+### Prototyping from 💻 a local Mac
+From a computer on your local network ... 
+
+1. Make change 
+2. Push up to `master`
+3. Run test script ... 
 
 ```sh
-pi@raspberrypi:~ $ ls -l
-drwxr-xr-x 2 pi pi 4096 Sep 21 22:00 Bookshelf
-drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Desktop
-drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Documents
-drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Downloads
-*************************************************
-drwxr-xr-x 4 pi pi 4096 Nov 14 13:11 LaserPi
-*************************************************
-drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Music
-drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Pictures
-drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Public
-drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Templates
-drwxr-xr-x 2 pi pi 4096 Nov 14 12:56 Videos
+ssh pi@raspberrypi.local 'bash -s' < rPiLocalTest.sh
 ```
 
-So you can run any of the python scripts in `LaserPi/`, like `servoTest.py`. From a computer on your local network, run ... 
+### Prototyping from 🍇 your Raspberry Pi
+If you're already on your RPi, you can just run ... 
 
 ```sh
-ssh pi@raspberrypi.local
-cd LaserPi/
-python servoTest.py
+LaserPi/rPiLocalTest.sh
 ```
-
-If you've wired your circuit correctly, your Adafruit servos should start to wiggle every 0.5s.

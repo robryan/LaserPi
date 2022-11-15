@@ -34,9 +34,13 @@ git clone https://github.com/robryan/LaserPi.git
 # [ -z "$GPIOZERO_PIN_FACTORY" ] && export GPIOZERO_PIN_FACTORY=pigpio
 
 # download Python libs
-# sudo apt-get -y install python3-pip 
+sudo apt-get -y install python3-pip 
+sudo pip install numpy
 # sudo pip install adafruit-io
 # sudo pip install weather-api 
+
+# clean up extra Python libs
+sudo apt autoremove
 
 echo -e "\n finished Pi setup, rebooting ...\n"
 
