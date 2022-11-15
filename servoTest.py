@@ -62,16 +62,15 @@ Flex the servos by rotating each to its minimum, midpoint, and max
 """
 def draw_box(interval_seconds, num_iterations):
     try:
+        vertical_yaw.min()
+        lateral_pitch.min()
+
         for iteration in range(0, num_iterations):
             # rotate left/right in tiny steps
             for x in np.arange(-1, 1, 0.1):
+                print("x is currently ... ", x)
                 vertical_yaw.value = x
-                sleep(0.001)
-
-            for y in np.arange(-1, 1, 0.1):
-                lateral_pitch.value = y
-                sleep(0.001)
-            
+                sleep(0.01)
             sleep(interval_seconds)
 
     except KeyboardInterrupt:
