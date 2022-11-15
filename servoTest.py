@@ -18,7 +18,7 @@ print("hello world, let's try to move a servo")
 pigpio_factory = PiGPIOFactory()
 
 vertical_yaw = AngularServo(pin=14, min_angle=-90, max_angle=90, pin_factory=pigpio_factory)    # GPIO port #14 controls vertical axis
-lateral_pitch = AngularServo(pin=15, min_angle=-75, max_angle=75, pin_factory=pigpio_factory)   # GPIO port #15 controls lateral axis
+lateral_pitch = AngularServo(pin=15, min_angle=0, max_angle=90, pin_factory=pigpio_factory)   # GPIO port #15 controls lateral axis
 
 """
 Flex the servos by rotating each to its minimum, midpoint, and max
@@ -84,8 +84,8 @@ def draw_box(interval_seconds, num_iterations):
                 vertical_yaw.angle = x
                 sleep(x_sleep)
 
-            y_bottom = -75
-            y_top = 75
+            y_bottom = 0
+            y_top = 45
             y_step = 0.1          # size in degrees of smallest servo motion
             y_sleep = 0.001     # pause between movements
 
