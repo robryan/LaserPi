@@ -71,20 +71,21 @@ def draw_box(interval_seconds, num_iterations):
             x_left = 1
             x_right = -1
             x_step = 0.001      # size of smallest servo motion
-            x_sleep = 0.01      # pause between movements
+            x_sleep = 0.001      # pause between movements
             
             # pan left to right
             for x in np.arange(x_left, x_right, x_step):
                 print("x is now ... ", x)
                 vertical_yaw.value = x
-                # sleep(x_sleep)
+                sleep(x_sleep)
 
             # pan right to left
-            for x in np.arange(x_right, x_left, x_step):
+            for x in np.arange(x_right, x_left, 0.001):
                 print("x is now ... ", x)
                 vertical_yaw.value = x
-                # sleep(x_sleep)
-            
+                sleep(x_sleep)
+
+            # pause for a sec before going again    
             sleep(interval_seconds)
 
     except KeyboardInterrupt:
