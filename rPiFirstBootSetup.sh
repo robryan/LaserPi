@@ -43,7 +43,7 @@ sudo pip install numpy
 sudo apt autoremove
 
 # download servo daemon library
-sudo apt-get -y install pigpiod
+sudo apt-get install pigpio python-pigpio python3-pigpio
 
 echo -e "\n finished Pi setup, rebooting ...\n"
 
