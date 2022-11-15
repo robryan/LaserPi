@@ -67,7 +67,7 @@ def draw_box(interval_seconds, num_iterations):
 
         for iteration in range(0, num_iterations):
             # rotate left/right in tiny steps
-            for x in np.arange(-1, 1, 0.1):
+            for x in np.arange(-1, 1, 0.01):
                 print("x is currently ... ", x)
                 vertical_yaw.value = x
                 sleep(0.01)
@@ -81,4 +81,4 @@ def draw_box(interval_seconds, num_iterations):
 
 # min_med_max(0.75, 4)   # 4 cycles, each every 0.75s
 
-draw_box(0.75, 4)   # 4 boxes, rest 0.75s between
+draw_box(2, 4)   # 4 boxes, rest 0.75s between
