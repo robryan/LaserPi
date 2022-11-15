@@ -85,7 +85,7 @@ def draw_box(interval_seconds, num_iterations):
 
             # tilt up/down
             for y in np.arange(y_bottom, y_top, y_step):
-                lateral_pitch.angle = x
+                lateral_pitch.angle = y
                 sleep(y_sleep)
 
             # pause for a sec before going again    
