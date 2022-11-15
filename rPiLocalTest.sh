@@ -16,9 +16,6 @@ echo "
 
 echo -e "pulling fresh LaserPi/master..."
 
-# download Git
-sudo apt-get -y install git 
-
 # LaserPi repo should already exist, so just `git pull`
 cd ./LaserPi/
 # We don't care about local changes, just set Git config to fast-fwd to master, 
