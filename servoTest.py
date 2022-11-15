@@ -5,14 +5,14 @@ testing pre-built Adafruit servo gimbals
 """
 
 import numpy as np
-from gpiozero import Servo
+from gpiozero import AngularServo
 from time import sleep
 
 
 print("hello world, let's try to move a servo")
 
-vertical_yaw = Servo(14)    # GPIO port #8 controls vertical axis
-lateral_pitch = Servo(15)   # GPIO port #10 controls lateral axis
+vertical_yaw = AngularServo(pin=14, min_angle=-90, max_angle=90)    # GPIO port #14 controls vertical axis
+lateral_pitch = AngularServo(pin=15, min_angle=-75, max_angle=75)   # GPIO port #15 controls lateral axis
 
 """
 Flex the servos by rotating each to its minimum, midpoint, and max
@@ -68,20 +68,18 @@ def draw_box(interval_seconds, num_iterations):
         for iteration in range(0, num_iterations):
             # rotate left/right in tiny steps
 
-            x_left = 1
-            x_right = -1
-            x_step = 0.001      # size of smallest servo motion
-            x_sleep = 0.001      # pause between movements
+            x_left = -90
+            x_right = 90
+            x_step = 1          # size in degrees of smallest servo motion
+            x_sleep = 0.001     # pause between movements
             
             # pan left to right
             for x in np.arange(x_left, x_right, x_step):
-                # print("x is now ... ", x)
                 vertical_yaw.value = x
                 sleep(x_sleep)
 
             # pan right to left
             for x in np.arange(x_right, x_left, 0.001):
-                # print("x is now ... ", x)
                 vertical_yaw.value = x
                 sleep(x_sleep)
 
