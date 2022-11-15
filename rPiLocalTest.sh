@@ -26,8 +26,11 @@ echo -e "Pi now up to date with LaserPi/master ..."
 echo -e "running servo test ..."
 
 # start servo daemon
+sudo killall pigpiod
+sudo pigpiod 
+
 # servoTest.py has the code we just updated and want to run without opening a new SSH shell
-sudo pigpiod && python LaserPi/servoTest.py
+python LaserPi/servoTest.py
 
 # return control 
 exit 1
