@@ -42,6 +42,9 @@ sudo pip install numpy
 # clean up extra Python libs
 sudo apt autoremove
 
+# download servo daemon library
+sudo apt-get -y install pigpiod
+
 echo -e "\n finished Pi setup, rebooting ...\n"
 
 # restart to make sure it's all available
