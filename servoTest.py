@@ -78,10 +78,15 @@ def draw_box(interval_seconds, num_iterations):
                 vertical_yaw.angle = x
                 sleep(x_sleep)
 
-            # # pan right to left
-            # for x in np.arange(x_right, x_left, x_step):
-            #     vertical_yaw.angle = x
-            #     sleep(x_sleep)
+            y_bottom = -75
+            y_top = 75
+            y_step = 0.1          # size in degrees of smallest servo motion
+            y_sleep = 0.001     # pause between movements
+
+            # tilt up/down
+            for y in np.arange(y_bottom, y_top, y_step):
+                lateral_pitch.angle = x
+                sleep(y_sleep)
 
             # pause for a sec before going again    
             sleep(interval_seconds)
