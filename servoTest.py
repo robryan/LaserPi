@@ -9,28 +9,45 @@ from time import sleep
 
 print("hello world, let's try to move a servo")
 
-servo_1 = Servo(14)    # Adafruit Servo 1 connected to GPIO port #8
-servo_2 = Servo(15)    # Adafruit Servo 2 connected to GPIO port #10
+servo_vertical_yaw = Servo(14)    # GPIO port #8 controls vertical axis
+servo_lateral_pitch = Servo(15)   # GPIO port #10 controls lateral axis
 
 """
 Flex the servos by rotating each to its minimum, midpoint, and max
 """
 def min_med_max(interval_seconds, num_iterations):
     try:
-        for iteration in range(0, 4):
-            # this is first
-            servo_1.min()
+        for iteration in range(0, num_iterations):
+            servo_vertical_yaw.min()
             sleep(interval_seconds)
-            servo_2.min()
+            
+            servo_lateral_pitch.min()
             sleep(interval_seconds)
-            servo_1.mid()
+            
+            servo_lateral_pitch.mid()
             sleep(interval_seconds)
-            servo_2.mid()
+            
+            servo_lateral_pitch.max()
             sleep(interval_seconds)
-            servo_1.max()
+            
+            servo_vertical_yaw.mid()
             sleep(interval_seconds)
-            servo_2.max()
+
+            servo_vertical_yaw.max()
             sleep(interval_seconds)
+
+            servo_lateral_pitch.mid()
+            sleep(interval_seconds)
+
+            servo_lateral_pitch.min()
+            sleep(interval_seconds)
+
+            servo_vertical_yaw.mid()
+            sleep(interval_seconds)
+
+            servo_lateral_pitch.mid()
+            sleep(interval_seconds)
+
     except KeyboardInterrupt:
         print("Program stopped")
 
