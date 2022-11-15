@@ -6,13 +6,14 @@ testing pre-built Adafruit servo gimbals
 
 import numpy as np
 from gpiozero import AngularServo
+from gpiozero import pins
 from time import sleep
 
 
 print("hello world, let's try to move a servo")
 
-vertical_yaw = AngularServo(pin=14, min_angle=-90, max_angle=90)    # GPIO port #14 controls vertical axis
-lateral_pitch = AngularServo(pin=15, min_angle=-75, max_angle=75)   # GPIO port #15 controls lateral axis
+vertical_yaw = AngularServo(pin=14, min_angle=-90, max_angle=90, pin_factory=pins.pigpio.PiGPIOFactory)    # GPIO port #14 controls vertical axis
+lateral_pitch = AngularServo(pin=15, min_angle=-75, max_angle=75, pin_factory=pins.pigpio.PiGPIOFactory)   # GPIO port #15 controls lateral axis
 
 """
 Flex the servos by rotating each to its minimum, midpoint, and max
@@ -95,6 +96,8 @@ def draw_box(interval_seconds, num_iterations):
         print("Program stopped")
 
     exit
+
+
 
 
 # min_med_max(0.75, 4)   # 4 cycles, each every 0.75s
