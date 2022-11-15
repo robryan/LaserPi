@@ -15,9 +15,9 @@ servo_2 = Servo(15)    # Adafruit Servo 2 connected to GPIO port #10
 """
 Flex the servos by rotating each to its minimum, midpoint, and max
 """
-def min_med_max(interval_seconds):
+def min_med_max(interval_seconds, num_iterations):
     try:
-        while True:
+        for iteration in range(0, 4):
             servo_1.min()
             servo_2.min()
             sleep(interval_seconds)
@@ -32,4 +32,4 @@ def min_med_max(interval_seconds):
 
 
 
-min_med_max(0.25)
+min_med_max(0.75, 10)   # 10 cycles, each every 0.75s
