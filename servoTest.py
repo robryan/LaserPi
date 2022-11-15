@@ -75,12 +75,12 @@ def draw_box(interval_seconds, num_iterations):
             
             # pan left to right
             for x in np.arange(x_left, x_right, x_step):
-                vertical_yaw.value = x
+                vertical_yaw.angle = x
                 sleep(x_sleep)
 
             # pan right to left
             for x in np.arange(x_right, x_left, 0.001):
-                vertical_yaw.value = x
+                vertical_yaw.angle = x
                 sleep(x_sleep)
 
             # pause for a sec before going again    
