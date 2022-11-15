@@ -67,10 +67,23 @@ def draw_box(interval_seconds, num_iterations):
 
         for iteration in range(0, num_iterations):
             # rotate left/right in tiny steps
-            for x in np.arange(-1, 1, 0.01):
-                print("x is currently ... ", x)
+
+            x_left = 1
+            x_right = -1
+            x_step = 0.001      # size of smallest servo motion
+            x_sleep = 0.01      # pause between movements
+            
+            # pan left to right
+            for x in np.arange(x_left, x_right, x_step):
+                print("x is now ... ", x)
                 vertical_yaw.value = x
-                sleep(0.01)
+                sleep(x_sleep)
+
+            # pan right to left
+            for x in np.arange(x_right, x_left, 0.001):
+                print("x is now ... ", x)
+                vertical_yaw.value = x
+                sleep(x_sleep)
             sleep(interval_seconds)
 
     except KeyboardInterrupt:
@@ -81,4 +94,4 @@ def draw_box(interval_seconds, num_iterations):
 
 # min_med_max(0.75, 4)   # 4 cycles, each every 0.75s
 
-draw_box(2, 4)   # 4 boxes, rest 0.75s between
+draw_box(2, 4)   # 4 boxes, rest between
