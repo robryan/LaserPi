@@ -26,6 +26,7 @@ echo -e "Pi now up to date with LaserPi/master ..."
 echo -e "running servo test ..."
 
 # servoTest.py has the code we just updated and want to run without opening a new SSH shell
+export GPIOZERO_PIN_FACTORY=pigpio
 python LaserPi/servoTest.py
 
 # return control 

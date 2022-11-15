@@ -5,15 +5,20 @@ testing pre-built Adafruit servo gimbals
 """
 
 import numpy as np
+from gpiozero import Device
 from gpiozero import AngularServo
-from gpiozero import pins
+from gpiozero.pins.pigpio import PiGPIOFactory
 from time import sleep
 
 
 print("hello world, let's try to move a servo")
 
-vertical_yaw = AngularServo(pin=14, min_angle=-90, max_angle=90, pin_factory=pins.pigpio.PiGPIOFactory)    # GPIO port #14 controls vertical axis
-lateral_pitch = AngularServo(pin=15, min_angle=-75, max_angle=75, pin_factory=pins.pigpio.PiGPIOFactory)   # GPIO port #15 controls lateral axis
+# smooth jitter with PigPIO
+# https://gpiozero.readthedocs.io/en/stable/api_output.html#servo fo
+pigpio_factory = PiGPIOFactory()
+
+vertical_yaw = AngularServo(pin=14, min_angle=-90, max_angle=90, pin_factory=pigpio_factory)    # GPIO port #14 controls vertical axis
+lateral_pitch = AngularServo(pin=15, min_angle=-75, max_angle=75, pin_factory=pigpio_factory)   # GPIO port #15 controls lateral axis
 
 """
 Flex the servos by rotating each to its minimum, midpoint, and max
