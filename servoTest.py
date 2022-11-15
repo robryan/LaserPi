@@ -19,12 +19,15 @@ def min_med_max(interval_seconds, num_iterations):
     try:
         for iteration in range(0, 4):
             servo_1.min()
+            sleep(interval_seconds)
             servo_2.min()
             sleep(interval_seconds)
             servo_1.mid()
+            sleep(interval_seconds)
             servo_2.mid()
             sleep(interval_seconds)
             servo_1.max()
+            sleep(interval_seconds)
             servo_2.max()
             sleep(interval_seconds)
     except KeyboardInterrupt:
