@@ -118,7 +118,7 @@ def left_right_w_easing(interval_seconds, num_iterations):
             x_left = -90
             x_right = 90
             x_step = 0.05       # size in degrees of smallest servo motion
-            x_num_mvmts = 64    # number of mvmts
+            x_num_mvmts = 128    # number of mvmts
 
             for x in cycleTween(easeInOutCubic, easeInOutCubic, x_left, x_right, x_num_mvmts, True):
                 print(x)

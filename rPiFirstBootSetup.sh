@@ -41,7 +41,7 @@ sudo apt autoremove
 # download servo daemon library
 sudo apt-get install pigpio python-pigpio python3-pigpio
 
-echo -e "\n finished Pi setup, rebooting ...\n"
+echo -e "finished Pi setup, rebooting ..."
 
 # restart to make sure it's all available
 # return control to remote user
