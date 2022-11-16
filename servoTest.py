@@ -4,12 +4,14 @@ Rob Ryan
 testing pre-built Adafruit servo gimbals
 """
 
-from time import sleep
+
+from tween import *
+
 
 import numpy as np
 from gpiozero import AngularServo
 from gpiozero.pins.pigpio import PiGPIOFactory
-from tween import *
+from time import sleep
 
 
 
