@@ -123,7 +123,7 @@ def left_right_w_easing(interval_seconds, num_iterations):
             for x in tween(easeInOutCubic, x_left, x_right, 14, True, False):
                 print(x)
                 vertical_yaw.angle = x
-                sleep(x_sleep)
+                sleep(x_step)
 
             
             # # pan left to right
