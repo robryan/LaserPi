@@ -32,14 +32,7 @@ PING raspberrypi.local (192.168.86.26): 56 data bytes
 ...
 ```
 
-3. **SSH into your new Raspberry Pi.** Now that your Raspberry Pi is awake, you should be able to login remotely using SSH over WiFi. From a local computer, run ... 
-
-```sh
-ssh pi@raspberrypi.local
-```
-... and use the `password` you set up in step (1) to complete the authorization. If you have a Windows machine, see the [RPi docs on how to emulate `ssh` using `PuTTY`](https://learn.sparkfun.com/tutorials/headless-raspberry-pi-setup/wifi-with-dhcp).
-
-4. **Run the setup script.** Your new Raspberry Pi is missing some of the libraries we'll need, like `git`. To setup up everything we need, run `rPiFirstBootSetup.sh` on your RPi. Starting on the local computer, 
+3. **Run the setup script.** Your new Raspberry Pi is missing some of the libraries we'll need, like `git`. To setup up everything we need, run `rPiFirstBootSetup.sh` on your RPi. Starting on the local computer, 
 
 ```sh
 cd PATH/TO/LASERPI/REPO # <= replace w the path to LaserPi repo
