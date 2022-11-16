@@ -117,10 +117,10 @@ def left_right_w_easing(interval_seconds, num_iterations):
             # rotate left/right in ease function'd steps
             x_left = -90
             x_right = 90
-            x_step = 0.1          # size in degrees of smallest servo motion
-            x_sleep = 0.001     # pause between movements
+            x_step = 0.05       # size in degrees of smallest servo motion
+            x_num_mvmts = 64    # number of mvmts
 
-            for x in cycleTween(easeInOutCubic, easeInOutCubic, x_left, x_right, 32, True):
+            for x in cycleTween(easeInOutCubic, easeInOutCubic, x_left, x_right, x_num_mvmts, True):
                 print(x)
                 vertical_yaw.angle = x
                 sleep(x_step)
@@ -155,4 +155,4 @@ def left_right_w_easing(interval_seconds, num_iterations):
 
 # draw_box(2, 4)   # 4 boxes, rest between
 
-left_right_w_easing(2, 4)  
+left_right_w_easing(2, 10)  
