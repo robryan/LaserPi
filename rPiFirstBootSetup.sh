@@ -29,13 +29,9 @@ sudo apt-get -y install git
 rm -rf ./LaserPi/
 git clone https://github.com/robryan/LaserPi.git 
 
-# set the rPI to use smoother "pigpio" servo lib bc "native" sucks
-# https://gpiozero.readthedocs.io/en/stable/api_pins.html#changing-pin-factory
-# [ -z "$GPIOZERO_PIN_FACTORY" ] && export GPIOZERO_PIN_FACTORY=pigpio
-
 # download Python libs
 sudo apt-get -y install python3-pip 
-sudo pip install numpy
+sudo apt-get -y install python3-numpy 
 # sudo pip install adafruit-io
 # sudo pip install weather-api 
 
